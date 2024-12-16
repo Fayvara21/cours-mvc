@@ -63,4 +63,9 @@
         </a>
     </div>
 </form>
+
+<div>
+attention, la santé des personnage ne remonte pas!
+</div>
+
 </div>
