@@ -136,4 +136,6 @@ class PersonnageController
             'footer' => $this->moteur->render('footerView')
         ]);
     }
+  
 }
+

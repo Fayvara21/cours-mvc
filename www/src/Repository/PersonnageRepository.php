@@ -80,7 +80,9 @@ class PersonnageRepository
     public function getById(int $id): ?Personnage
     {
         $stmt = $this->pdo->prepare("SELECT * FROM characters WHERE id = :id");
-        $stmt->execute([':id' => $id]);
+        $stmt->execute([
+          ':id' => $id
+        ]);
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row ? $this->createInstance($row) : null;
@@ -103,13 +105,13 @@ class PersonnageRepository
             ':name' => $character->getNom(),
             ':PV' => $character->getPv(),
             ':PVMax' => $character->getPVMax(),
-            ':str' => $character->getForce(),
+            ':force' => $character->getForce(),
             ':facesDe' => $character->getFacesDe(),
             ':chance' => $character->getChance(),
             ':XP' => $character->getXP(),
             ':avatar' => $character->getAvatar(),
             ':class' => $character->getClasse(),
-            ':mny' => $character->getMoney()
+            ':money' => $character->getMoney()
         ]);
 
         // Mettre à jour l'ID de l'instance après l'insertion

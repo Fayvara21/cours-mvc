@@ -80,6 +80,12 @@ class BagarreController
             if ($combattants[1]->isAlive()) {
                 $resultat .= $combattants[1]->attaquer($combattants[0]);
             }
+        
+        $pr = new PersonnageRepository();
+
+        $pr->update($combattants[0]);
+        $pr->update($combattants[1]);
+
 
             $resultat .= "\n";
         }
@@ -92,6 +98,7 @@ class BagarreController
             $combattants[0]->gagnerXP(10);
             $resultat .= "{$combattants[0]->getNom()} a gagné ! Il a maintenant {$combattants[0]->getXP()} XP (+10)\n";
         }
+        $combattants[0]->
 
         $resultat .= "----------------------------------------------------------------------\n";
 
