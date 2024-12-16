@@ -1,5 +1,5 @@
 <!-- cardView.php -->
-<div class="player-card overlay" style="background: linear-gradient(to bottom, transparent 50%, #ea0024), url('<?= htmlspecialchars($personnage->avatar) ?>'), url('/img/default.png');">
+<div class="player-card overlay" style="background: linear-gradient(to bottom, transparent 50%, #ea0024), url('<?= htmlspecialchars($personnage->getAvatar()) ?>'), url('/img/default.png');">
     <div class="player-name">
         <h2><?= htmlspecialchars($personnage->getNom()) ?></h2>
     </div>
@@ -7,9 +7,9 @@
         <p><?= htmlspecialchars($personnage->getClasse()) ?></p>
     </div>
     <div class="infos">
-        <p>STR[<?= htmlspecialchars($personnage->force) ?>] LUCK[<?= htmlspecialchars($personnage->chance) ?>] XP[<?= htmlspecialchars($personnage->XP) ?>]</p>
+        <p>STR[<?= htmlspecialchars($personnage->getForce()) ?>] LUCK[<?= htmlspecialchars($personnage->getChance()) ?>] XP[<?= htmlspecialchars($personnage->getXP()) ?>]</p>
     </div>
     <div class="pv">
-        <p><?= htmlspecialchars($personnage->PV) ?>PV</p>
+        <p><?= htmlspecialchars($personnage->GetPv()) ?>PV</p>
     </div>
 </div>

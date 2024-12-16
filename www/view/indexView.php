@@ -7,6 +7,7 @@
     <title>Death Game 3000</title>
     <link rel="stylesheet" href="/style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preload" href="Monocraft.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body class="bg-gray-100 flex flex-col min-h-screen">

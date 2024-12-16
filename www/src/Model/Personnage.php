@@ -6,14 +6,14 @@ class Personnage
 {
     protected ?int $id; // ID peut être null
     protected string $nom;
-    public int $PV;
-    public int $PVMax;
-    public int $force;
-    public int $facesDe;
-    public int $chance;
-    public int $XP = 0;
-    public int $money;
-    public string $avatar;
+    private int $PV;
+    private int $PVMax;
+    private int $force;
+    private int $facesDe;
+    private int $chance;
+    private int $XP = 0;
+    private int $money;
+    private string $avatar;
     protected string $classe;
 
     public function __construct(
@@ -36,7 +36,7 @@ class Personnage
         $this->facesDe = $facesDe;
         $this->chance = $chance;
         $this->money = $money;
-        $this->avatar = "/img/$avatar";
+        $this->avatar = $avatar;
         $this->classe = "Personnage";
         $this->XP = $XP;
     }
@@ -45,6 +45,77 @@ class Personnage
     {
         return $this->PV > 0;
     }
+
+    public function getPv()
+    {
+      return $this->PV;
+    }
+
+    public function setPv(int $PV) 
+    {
+      $this->PV = $PV;
+    }
+
+    public function getPvMax()
+    {
+      return $this->PVMax;
+    }
+
+    public function setPvMax(int $PVMax) 
+    {
+      $this->PVMax = $PVMax;
+    }
+
+    public function getForce()
+    {
+      return $this->force;
+    }
+
+    public function setForce(int $Force) 
+    {
+     $this->force = $Force;
+    }
+
+    public function getFacesDe()
+    {
+      return $this->facesDe;
+    }
+
+    public function setFacesDe(int $FacesDe) 
+    {
+      $this->facesDe = $FacesDe;
+    }
+
+    public function getChance()
+    {
+      return $this->chance;
+    }
+
+    public function setChance(int $Chance) 
+    {
+      $this->chance = $Chance;
+    }
+
+    public function getMoney()
+    {
+      return $this->money;
+    }
+
+    public function setMoney(int $Money) 
+    {
+      $this->money = $Money;
+    }
+
+    public function getAvatar()
+    {
+      return $this->avatar;
+    }
+
+    public function setAvatar(string $Avatar) 
+    {
+      $this->avatar = "/img/$Avatar";
+    }
+
 
     // Commencez à typer les propriétés pour éviter les erreurs
     public function getId(): ?int

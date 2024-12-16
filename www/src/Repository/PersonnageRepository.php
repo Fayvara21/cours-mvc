@@ -100,16 +100,16 @@ class PersonnageRepository
         ");
 
         $stmt->execute([
-            ':name' => $character->nom,
-            ':PV' => $character->PV,
-            ':PVMax' => $character->PVMax,
-            ':force' => $character->force,
-            ':facesDe' => $character->facesDe,
-            ':chance' => $character->chance,
-            ':XP' => 0,
-            ':avatar' => $character->avatar,
+            ':name' => $character->getNom(),
+            ':PV' => $character->getPv(),
+            ':PVMax' => $character->getPVMax(),
+            ':str' => $character->getForce(),
+            ':facesDe' => $character->getFacesDe(),
+            ':chance' => $character->getChance(),
+            ':XP' => $character->getXP(),
+            ':avatar' => $character->getAvatar(),
             ':class' => $character->getClasse(),
-            ':money' => $character->money
+            ':mny' => $character->getMoney()
         ]);
 
         // Mettre à jour l'ID de l'instance après l'insertion
@@ -148,15 +148,15 @@ class PersonnageRepository
 
         $stmt->execute([
             ':name' => $character->getNom(),
-            ':PV' => $character->PV,
-            ':PVMax' => $character->PVMax,
-            ':str' => $character->force,
-            ':facesDe' => $character->facesDe,
-            ':chance' => $character->chance,
-            ':XP' => $character->XP,
-            ':avatar' => $character->avatar,
+            ':PV' => $character->getPv(),
+            ':PVMax' => $character->getPVMax(),
+            ':str' => $character->getForce(),
+            ':facesDe' => $character->getFacesDe(),
+            ':chance' => $character->getChance(),
+            ':XP' => $character->getXP(),
+            ':avatar' => $character->getAvatar(),
             ':class' => $character->getClasse(),
-            ':mny' => $character->money,
+            ':mny' => $character->getMoney(),
             ':id' => $character->getId()
         ]);
     }

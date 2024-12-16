@@ -5,6 +5,15 @@ namespace App\Model;
 
 class Vampire extends Personnage
 {
+    private int $PV;
+    private int $PVMax;
+    private int $force;
+    private int $facesDe;
+    private int $chance;
+    private int $XP = 0;
+    private int $money;
+    private string $avatar;
+
     public function __construct(
         string $nom,
         int $PV,
@@ -20,6 +29,16 @@ class Vampire extends Personnage
         // Appel du constructeur parent avec les bons paramètres
         parent::__construct($nom, $PV, $PVMax, $force, $facesDe, $chance, $money, $avatar, $XP, $id);
         $this->classe = "Vampire";
+        $this->id = $id;
+        $this->nom = $nom;
+        $this->PV = $PV;
+        $this->PVMax = $PVMax;
+        $this->force = $force;
+        $this->facesDe = $facesDe;
+        $this->chance = $chance;
+        $this->money = $money;
+        $this->avatar = "/img/$avatar";
+        $this->XP = $XP;
     }
 
     // Dynamique d'attaque différente pour les vampires : héritage
@@ -48,12 +67,12 @@ class Vampire extends Personnage
         } else {
             $resultat .= "$this->nom attaque $cible->nom! GRAOUUUU !\n";
             $resultat .= "$cible->nom perd $this->force PV !\n";
-            $cible->PV -= $this->force;
+            $cible->setPv($this->force) ;
 
             // On rajoute un vampirisation, pour la classe Vampire
             $vampirisation = intval($this->force / 10);
             $this->PV += $vampirisation;
-            $resultat .= "$cible->nom a maintenant $cible->PV PV restants et $this->nom récupère $vampirisation PV !\n";
+            $resultat .= "$cible->nom a maintenant ".$cible->getPv()."PV restants et $this->nom récupère $vampirisation PV !\n";
         }
 
         return $resultat;
